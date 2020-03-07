@@ -1,23 +1,22 @@
 body {
-    background-color: darkgrey;
+    background-color: black; /*background*/
     color: white;
 }
-.CVET {
-    color: grey
+.orange {
+    color: orange
 }
 
-.newColor {
-    color: black
+.white {
+    color: white
 }
-
-.blue {
-    color: blue
+                   /* cvet texta*/
+.pink {
+    color: pink
 }
-
-.red {
-    color: red
-}
-
 .green {
     color: green
 }
+.black {
+    color: black
+}
+
