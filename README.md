@@ -10,48 +10,51 @@ Plyashkevich Anton 28z
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/690967156539785306/unknown.png>
 
 **Добавлен список предметов** 
- 
-<br> data class Lesson(
- <br>    val name: String
-<br> )
-<br> 
-<br> val Predmet
-  <br>       = arrayListOf(
- <br>    Lesson("Philosophy"),
- <br>    Lesson("Information Processing Theories"),
- <br>    Lesson("OOP")
-<br> )
+ ```
+ data class Lesson(
+    val name: String
+ )
 
+ val Predmet
+       = arrayListOf(
+   Lesson("Philosophy"),
+    Lesson("Information Processing Theories"),
+   Lesson("OOP")
+ )
+```
 **Задание: Поднимите состояние компонента RStudentList в созданный компонент.**
-<br>interface RpredmetProps : RProps {
- <br>   var predmet: Array <Lesson
- <br>   var listStudent :Array <Student
-<br> /* var value: Array <Boolean */
-<br> }
+```
+interface RpredmetProps : RProps {
+   var predmet: Array <Lesson
+  var listStudent :Array <Student
+ /* var value: Array <Boolean */
+}
 
-<br> interface RpredmetState : RState {
- <br>    var value: Array <Boolean
-<br> }
-
+ interface RpredmetState : RState {
+   var value: Array <Boolean
+ }
+```
 **Переделан main.kt. Добавлено:** 
- <br> h1 {
-     <br>       +"Timetable for objects"
-     <br>   }
-       <br> ol{
-      <br>      +"StudentsList"
-      <br>      li{
-          <br>      +"Anton Cooper, Anton Hofstadter, Anton Wolowitz"
-    <br>        }
-    <br>    }
-     <br>   RPREDMET(Predmet)
-
+```
+h1 {
+          +"Timetable for objects"
+      }
+        ol{
+          +"StudentsList"
+          li{
+             +"Anton Cooper, Anton Hofstadter, Anton Wolowitz"
+         }
+     }
+    RPREDMET(Predmet)
+```
 **RstudentList преобразован в functionalComponent**
-
+```
 val RFstudentlist =
-    <br>functionalComponent<RStudentListProps> { props ->
-      <br>  props.students.mapIndexed { index, student ->
-         <br>   li {
-            <br>    RPREDMET(student, props.value[index], props.onClick(index))         // TODO functional component
-        <br>    }
-       <br> }
- <br>   }
+    functionalComponent<RStudentListProps> { props ->
+      props.students.mapIndexed { index, student ->
+          li {
+               RPREDMET(student, props.value[index], props.onClick(index))         // TODO functional component
+           }
+       }
+  }
+```
