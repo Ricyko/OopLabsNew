@@ -11,16 +11,47 @@ Plyashkevich Anton 28z
 
 Добавлен список предметов
  
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/690967934973247580/unknown.png>
+<br> data class Lesson(
+ <br>    val name: String
+<br> )
+<br> 
+<br> val Predmet
+  <br>       = arrayListOf(
+ <br>    Lesson("Philosophy"),
+ <br>    Lesson("Information Processing Theories"),
+ <br>    Lesson("OOP")
+<br> )
 
-Задание: Поднимите состояние компонента RStudentList в созданный компонент
+Задание: Поднимите состояние компонента RStudentList в созданный компонент.
+<br>interface RpredmetProps : RProps {
+ <br>   var predmet: Array<Lesson>
+ <br>   var listStudent :Array<Student>
+<br> /* var value: Array<Boolean> */
+<br> }
 
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/690968574411538472/unknown.png>
+<br> interface RpredmetState : RState {
+ <br>    var value: Array<Boolean>
+<br> }
 
-Переделан main.kt 
-
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/690968910782136340/unknown.png>
+Переделан main.kt. Добавлено
+ <br> h1 {
+     <br>       +"Timetable for objects"
+     <br>   }
+       <br> ol{
+      <br>      +"StudentsList"
+      <br>      li{
+          <br>      +"Anton Cooper, Anton Hofstadter, Anton Wolowitz"
+    <br>        }
+    <br>    }
+     <br>   RPREDMET(Predmet)
 
 RstudentList преобразован в functionalComponent
 
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/690969522525438052/unknown.png>
+val RFstudentlist =
+    <br>functionalComponent<RStudentListProps> { props ->
+      <br>  props.students.mapIndexed { index, student ->
+         <br>   li {
+            <br>    RPREDMET(student, props.value[index], props.onClick(index))         // TODO functional component
+        <br>    }
+       <br> }
+ <br>   }
