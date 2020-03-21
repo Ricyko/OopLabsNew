@@ -5,19 +5,16 @@ import org.w3c.dom.events.Event
 import react.*
 import react.dom.ol
 
-interface RSubjectProps : RProps {
-    var subject: Array<Lesson>
+interface RpredmetProps : RProps {
+    var predmet: Array<Lesson>
     var listStudent :Array<Student>
-/* var present: Array<Boolean> */
+/* var value: Array<Boolean> */
 }
-
-
-
-interface RSubjectState : RState {
+interface RpredmetState : RState {
     var value: Array<Boolean>
 }
 
-class RPREDMET : RComponent<RSubjectProps, RSubjectState>() {
+class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
     override fun componentWillMount() {
         state.apply {
             value = Array(props.listStudent.size) { false }
@@ -27,7 +24,7 @@ class RPREDMET : RComponent<RSubjectProps, RSubjectState>() {
         onClick(it)
     }
     override fun RBuilder.render() {
-        props.subject.map {
+        props.predmet.map {
             + it.name
             ol {
                 rstudentlist(props.listStudent, state.value, onIndex())
@@ -37,17 +34,17 @@ class RPREDMET : RComponent<RSubjectProps, RSubjectState>() {
     /*class SLesson : RComponent<LessonProps, RState>() {
         override fun componentWillMount() {
             state.apply {
-                present = Array(props.listStudent.size) { false }
+                value = Array(props.listStudent.size) { false }
             }
         }
         fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {
             onClick(it)
         }
         override fun RBuilder.render() {
-            props.subject.map {
+            props.predmet.map {
                 + it.name
                 ol {
-                    rstudentlist(props.listStudent, state.present, onIndex())
+                    rstudentlist(props.listStudent, state.value, onIndex())
                 }
             }
         }*/
@@ -58,19 +55,19 @@ class RPREDMET : RComponent<RSubjectProps, RSubjectState>() {
         }
     }
 }
-/*fun RBuilder.predmet(subject:  ArrayList<Lesson> ) =
+/*fun RBuilder.predmet(predmet:  ArrayList<Lesson> ) =
     child(SLesson::class)
     {
-        attrs.subject = subject.toTypedArray()
+        attrs.predmet = predmet.toTypedArray()
         attrs.listStudent = studentList.toTypedArray()
     }*/
 
 
 
-fun RBuilder.RPREDMET(subject:  ArrayList<Lesson> ) =
+fun RBuilder.RPREDMET(predmet:  ArrayList<Lesson> ) =
     child(RPREDMET::class)
     {
-        attrs.subject = subject.toTypedArray()
+        attrs.predmet = predmet.toTypedArray()
         attrs.listStudent = studentList.toTypedArray()
     }
 
