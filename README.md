@@ -24,13 +24,13 @@ Plyashkevich Anton 28z
 
 **Задание: Поднимите состояние компонента RStudentList в созданный компонент.**
 <br>interface RpredmetProps : RProps {
- <br>   var predmet: Array <Lesson>
- <br>   var listStudent :Array <Student>
-<br> /* var value: Array <Boolean> */
+ <br>   var predmet: Array <Lesson
+ <br>   var listStudent :Array <Student
+<br> /* var value: Array <Boolean */
 <br> }
 
 <br> interface RpredmetState : RState {
- <br>    var value: Array <Boolean>
+ <br>    var value: Array <Boolean
 <br> }
 
 **Переделан main.kt. Добавлено:** 
