@@ -5,7 +5,7 @@ Plyashkevich Anton 28z
 
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/690966580858847373/unknown.png>
 
-Программа после нажатия. TRUE = присутсвует студент. FALCE = отсутсвует студент.
+ Программа после нажатия. TRUE = присутсвует студент. FALCE = отсутсвует студент.
 
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/690967156539785306/unknown.png>
 
@@ -33,7 +33,7 @@ Plyashkevich Anton 28z
  <br>    var value: Array<Boolean>
 <br> }
 
-Переделан main.kt. Добавлено
+ Переделан main.kt. Добавлено:
  <br> h1 {
      <br>       +"Timetable for objects"
      <br>   }
