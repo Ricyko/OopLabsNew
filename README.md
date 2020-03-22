@@ -64,7 +64,7 @@ class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
             value = Array(props.listStudent.size) { false }
         }
     }
-    fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {
+    fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {            // TODO Component PREDMET
         onClick(it)
     }
     override fun RBuilder.render() {
@@ -75,23 +75,7 @@ class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
             }
         }
     }
-    /*class SLesson : RComponent<LessonProps, RState>() {
-        override fun componentWillMount() {
-            state.apply {
-                value = Array(props.listStudent.size) { false }              // TODO Component PREDMET
-            }
-        }
-        fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {
-            onClick(it)
-        }
-        override fun RBuilder.render() {
-            props.predmet.map {
-                + it.name
-                ol {
-                    rstudentlist(props.listStudent, state.value, onIndex())
-                }
-            }
-        }*/
+ 
 
     fun RBuilder.onClick(index: Int): (Event) -> Unit = {
         setState {
