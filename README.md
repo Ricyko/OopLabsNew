@@ -7,14 +7,6 @@ Plyashkevich Anton 28z
 <br>-Поднимите состояние компонента RStudentList в созданный компонент;
 <br>-StudentList преобразуйте в функциональный компонент;
 
-**Программа после запуска**
-
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/690966580858847373/unknown.png>
-
- **Программа после нажатия. TRUE = присутсвует студент. FALCE = отсутсвует студент.**
-
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/690967156539785306/unknown.png>
-
 **Добавлен список предметов** 
  ```
  data class Lesson(
@@ -123,3 +115,10 @@ fun RBuilder.RPREDMET(predmet:  ArrayList<Lesson> ) =
         attrs.listStudent = studentList.toTypedArray()
     }
 ```
+**Программа после запуска**
+
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/690966580858847373/unknown.png>
+
+ **Программа после нажатия. TRUE = присутсвует студент. FALCE = отсутсвует студент.**
+
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/690967156539785306/unknown.png>
