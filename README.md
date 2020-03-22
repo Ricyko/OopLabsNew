@@ -78,7 +78,7 @@ class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
     /*class SLesson : RComponent<LessonProps, RState>() {
         override fun componentWillMount() {
             state.apply {
-                value = Array(props.listStudent.size) { false }
+                value = Array(props.listStudent.size) { false }              // TODO Компонент PREDMET
             }
         }
         fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {
