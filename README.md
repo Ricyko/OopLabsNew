@@ -45,7 +45,7 @@ h1 {
      }
     RPREDMET(Predmet)
 ```
-**RstudentList преобразован в functionalComponent**
+**Задание: RstudentList преобразован в functionalComponent**
 ```
 val RFstudentlist =
     functionalComponent<RStudentListProps> { props ->
@@ -56,7 +56,7 @@ val RFstudentlist =
        }
   }
 ```
-**Переделать приложение, реализовав компонент «Занятие»**
+**Задание: Переделать приложение, реализовав компонент «Занятие»**
 ```
 class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
     override fun componentWillMount() {
