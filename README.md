@@ -1,6 +1,9 @@
 # OopLabsNew
 Plyashkevich Anton 28z
-
+**Задания**
+-Переделать приложение, реализовав компонент «Занятие»;
+-Поднимите состояние компонента RStudentList в созданный компонент;
+-StudentList преобразуйте в функциональный компонент;
 **Программа после запуска**
 
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/690966580858847373/unknown.png>
@@ -57,4 +60,63 @@ val RFstudentlist =
            }
        }
   }
+```
+**Переделать приложение, реализовав компонент «Занятие»**
+```
+class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
+    override fun componentWillMount() {
+        state.apply {
+            value = Array(props.listStudent.size) { false }
+        }
+    }
+    fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {
+        onClick(it)
+    }
+    override fun RBuilder.render() {
+        props.predmet.map {
+            + it.name
+            ol {
+                rstudentlist(props.listStudent, state.value, onIndex())
+            }
+        }
+    }
+    /*class SLesson : RComponent<LessonProps, RState>() {
+        override fun componentWillMount() {
+            state.apply {
+                value = Array(props.listStudent.size) { false }
+            }
+        }
+        fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {
+            onClick(it)
+        }
+        override fun RBuilder.render() {
+            props.predmet.map {
+                + it.name
+                ol {
+                    rstudentlist(props.listStudent, state.value, onIndex())
+                }
+            }
+        }*/
+
+    fun RBuilder.onClick(index: Int): (Event) -> Unit = {
+        setState {
+            value[index] = !value[index]
+        }
+    }
+}
+/*fun RBuilder.predmet(predmet:  ArrayList<Lesson> ) =
+    child(SLesson::class)
+    {
+        attrs.predmet = predmet.toTypedArray()
+        attrs.listStudent = studentList.toTypedArray()
+    }*/
+
+
+
+fun RBuilder.RPREDMET(predmet:  ArrayList<Lesson> ) =
+    child(RPREDMET::class)
+    {
+        attrs.predmet = predmet.toTypedArray()
+        attrs.listStudent = studentList.toTypedArray()
+    }
 ```
