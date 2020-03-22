@@ -99,12 +99,6 @@ class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
         }
     }
 }
-/*fun RBuilder.predmet(predmet:  ArrayList<Lesson> ) =
-    child(SLesson::class)
-    {
-        attrs.predmet = predmet.toTypedArray()
-        attrs.listStudent = studentList.toTypedArray()
-    }*/
 
 
 
