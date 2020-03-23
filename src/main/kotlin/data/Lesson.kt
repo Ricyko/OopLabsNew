@@ -8,7 +8,5 @@ data class Lesson(
 
 val Predmet
         = arrayListOf(
-    Lesson("Philosophy"),
-    Lesson("Information Processing Theories"),
-    Lesson("OOP")
+    Lesson("Philosophy")
 )
