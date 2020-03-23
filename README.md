@@ -95,8 +95,8 @@ fun RBuilder.RPREDMET(predmet:  ArrayList<Lesson> ) =
 ```
 **Программа после запуска**
 
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/691278564380639302/unknown.png>
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/691531362670477333/unknown.png>
 
  **Программа после нажатия. TRUE = присутсвует студент. FALCE = отсутсвует студент.**
 
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/691278697050669098/unknown.png>
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/691531466923966464/unknown.png>
