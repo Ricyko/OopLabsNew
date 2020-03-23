@@ -7,7 +7,7 @@ Plyashkevich Anton 28z
 <br>-Поднимите состояние компонента RStudentList в созданный компонент;
 <br>-StudentList преобразуйте в функциональный компонент;
 
-**Добавлен список предметов** 
+**Добавлено занятие "Philosophy"** 
  ```
  data class Lesson(
     val name: String
@@ -15,9 +15,7 @@ Plyashkevich Anton 28z
 
  val Predmet
        = arrayListOf(
-   Lesson("Philosophy"),
-    Lesson("Information Processing Theories"),
-   Lesson("OOP")
+   Lesson("Philosophy")
  )
 ```
 **Задание: Поднимите состояние компонента RStudentList в созданный компонент.**
