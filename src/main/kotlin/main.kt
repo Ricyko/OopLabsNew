@@ -1,12 +1,11 @@
-import data.Lesson
-import data.Predmet
+/*import data.Lesson*/
+import data.studentList
+import data.studentList
 import react.dom.h1
 import react.dom.li
 import react.dom.ol
 import react.dom.render
 import kotlin.browser.document
-
-
 
 
 fun main() {
@@ -20,7 +19,6 @@ fun main() {
                 +"Anton Cooper, Anton Hofstadter, Anton Wolowitz"
             }
         }
-        RPREDMET(Predmet)
-
+        PREDMET("PHILOSOPHY", studentList.toTypedArray())
     }
 }
