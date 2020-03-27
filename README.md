@@ -134,6 +134,22 @@ fun RBuilder.PREDMET(predm: String, students: Array<Student>) =
         attrs.students = students
     }
 ```
+**Rlesson убран**
+```
+package data
+
+
+
+data class Lesson(
+    val name: String
+)
+
+val Predmet
+        = arrayListOf(
+    Lesson("Philosophy")
+)
+```
+
 **Программа после запуска**
 
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/693049005466189944/unknown.png>
