@@ -149,6 +149,30 @@ val Predmet
     Lesson("Philosophy")
 )
 ```
+**Меняем цвет** 
+ ```
+body {
+    background-color: black;
+    color: white;
+}
+
+.present {
+    font-weight: bold
+    color: white;
+}
+
+.absent {
+    font-style: italic;
+    color: darkgreen;
+}
+h1
+{
+color: green;
+font-weight:bold;}
+ol{
+color:darkgreen;
+font-weight:bold;}
+```
 
 **Программа после запуска**
 
