@@ -9,92 +9,135 @@ Plyashkevich Anton 28z
 
 **Добавлено занятие "Philosophy"** 
  ```
- data class Lesson(
-    val name: String
- )
+fun main() {
+    render(document.getElementById("root")!!) {
+        h1 {
+            +"Students"
 
- val Predmet
-       = arrayListOf(
-   Lesson("Philosophy")
- )
+        }
+        PREDMET("PHILOSOPHY", studentList.toTypedArray())
+    }
+}
 ```
 **Задание: Поднимите состояние компонента RStudentList в созданный компонент.**
 ```
-interface RpredmetProps : RProps {
-   var predmet: Array <Lesson>
-  var listStudent :Array <Student>
- /* var value: Array <Boolean> */
+interface RClassProps : RProps {
+    var predm: String
+    var students: Array<Student>
+    /*  var value: Array<Boolean>*/                 //changed
 }
 
- interface RpredmetState : RState {
-   var value: Array <Boolean>
- }
+interface RpredmetState : RState {
+    var value: Array<Boolean>
+
+}
+
 ```
 **Переделан main.kt. Добавлено:** 
 ```
-h1 {
-          +"Timetable for objects"
-      }
+fun main() {
+    render(document.getElementById("root")!!) {
+        h1 {
+            +"Timetable for objects"
+        }
         ol{
-          +"StudentsList"
-          li{
-             +"Anton Cooper, Anton Hofstadter, Anton Wolowitz"
-         }
-     }
-    RPREDMET(Predmet)
+            +"StudentsList"
+            li{
+                +"Anton Cooper, Anton Hofstadter, Anton Wolowitz"
+            }
+        }
+        PREDMET("PHILOSOPHY", studentList.toTypedArray())
+    }
+}
 ```
 **Задание: RstudentList преобразован в functionalComponent**
 ```
-val RFstudentlist =
-    functionalComponent<RStudentListProps> { props ->
-      props.students.mapIndexed { index, student ->
-          li {
-               RPREDMET(student, props.value[index], props.onClick(index))         // TODO functional component
-           }
-       }
-  }
-```
-**Задание: Переделать приложение, реализовав компонент «Занятие»**
-```
-class RPREDMET : RComponent<RpredmetProps, RpredmetState>() {
-    override fun componentWillMount() {
-        state.apply {
-            value = Array(props.listStudent.size) { false }
-        }
-    }
-    fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {            // TODO Component PREDMET
-        onClick(it)
-    }
-    override fun RBuilder.render() {
-        props.predmet.map {
-            + it.name
-            ol {
-                rstudentlist(props.listStudent, state.value, onIndex())
+val RFStudentList =
+    functionalComponent<RSProps> { props ->
+        ol {                                                        // TODO FUNC COMPONNENT
+            props.students.mapIndexed { index, student ->
+                li {
+                    rstudent(student, props.value[index], props.onClick(index))
+                }
             }
         }
     }
- 
 
-    fun RBuilder.onClick(index: Int): (Event) -> Unit = {
-        setState {
-            value[index] = !value[index]
-        }
-    }
+```
+**Задание: Переделать приложение, реализовав компонент «Занятие»**
+```
+interface RClassProps : RProps {
+    var predm: String
+    var students: Array<Student>
+    /*  var value: Array<Boolean>*/                 //changed
 }
 
+interface RpredmetState : RState {
+    var value: Array<Boolean>
+
+}
+
+class PREDMET : RComponent<RClassProps, RpredmetState>() {
+
+    override fun componentWillMount() {
+        state.apply {
+            value = Array(props.students.size) { false }
+        }
+    }
+    /*class SLesson : RComponent<LessonProps, RState>() {
+        override fun componentWillMount() {
+            state.apply {
+                value = Array(props.listStudent.size) { false }
+            }
+        }
+        fun RBuilder.onIndex(): (Int) -> (Event) -> Unit = {
+            onClick(it)
+        }
+        override fun RBuilder.render() {
+            props.predmet.map {
+                + it.name
+                ol {
+                    rstudentlist(props.listStudent, state.value, onIndex())
+                }
+            }
+        }*/
+
+    fun onClick() = { index: Int ->
+        { _: Event ->
+            setState {
+                value[index] = !value[index]
+            }
+        }
+    }
+
+    override fun RBuilder.render() {
+        div {
+            +props.predm
+            studentList(props.students, state.value, onClick())
+        }
 
 
-fun RBuilder.RPREDMET(predmet:  ArrayList<Lesson> ) =
-    child(RPREDMET::class)
+    }
+
+}
+/*fun RBuilder.predmet(predmet:  ArrayList<Lesson> ) =
+    child(SLesson::class)
     {
         attrs.predmet = predmet.toTypedArray()
         attrs.listStudent = studentList.toTypedArray()
+    }*/
+
+
+fun RBuilder.PREDMET(predm: String, students: Array<Student>) =
+    child(PREDMET::class) {
+        attrs.predm = predm                                             //TODO
+        attrs.students = students
     }
 ```
 **Программа после запуска**
 
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/691531362670477333/unknown.png>
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/693049005466189944/unknown.png>
 
  **Программа после нажатия. TRUE = присутсвует студент. FALCE = отсутсвует студент.**
 
-<img src=https://cdn.discordapp.com/attachments/407510344509030400/691531466923966464/unknown.png>
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/693049047824597162/unknown.png>
