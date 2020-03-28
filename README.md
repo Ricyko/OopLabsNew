@@ -94,7 +94,7 @@ fun RBuilder.PREDMET(predm: String, students: Array<Student>) =
         attrs.students = students
     }
 ```
-**Rlesson убран**
+**lesson убран**
 ```
 package data
 data class Lesson(
