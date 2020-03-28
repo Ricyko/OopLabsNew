@@ -22,7 +22,7 @@ interface RpredmetState : RState {
 }
 
 ```
-**Переделан main.kt. Добавлено: занятие "Philosophy"** 
+**Переделан main.kt. Добавлено: занятие "Philosophy" в нее передается функция RPREDMET** 
 ```
 fun main() {
     render(document.getElementById("root")!!) {
@@ -39,7 +39,7 @@ fun main() {
     }
 }
 ```
-**Задание: RstudentList преобразован в functionalComponent**
+**Задание: RstudentList преобразован в functionalComponent, исходя из данных полученных на видеоуроке в Stepik**
 ```
 val RFStudentList =
     functionalComponent<RSProps> { props ->
@@ -94,7 +94,7 @@ fun RBuilder.PREDMET(predm: String, students: Array<Student>) =
         attrs.students = students
     }
 ```
-**lesson убран**
+**lesson убран по вашему заданию**
 ```
 package data
 data class Lesson(
@@ -105,7 +105,7 @@ val Predmet
     Lesson("Philosophy")
 )
 ```
-**Меняем цвет** 
+**Меняем цвет текста и бекграунда с помощью css файла** 
  ```
 body {
     background-color: black;
