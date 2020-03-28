@@ -8,7 +8,7 @@ Plyashkevich Anton 28z
 <br>-StudentList преобразуйте в функциональный компонент;
 
 
-**Задание: Поднимите состояние компонента RStudentList в созданный компонент. Поднято состояние RpredmetState компонента RstudentList**
+**Задание: Поднимите состояние компонента RStudentList в созданный компонент. Поднято состояние RpredmetState компонента RstudentList в занятие.**
 ```
 interface RClassProps : RProps {
     var predm: String
@@ -94,7 +94,7 @@ fun RBuilder.PREDMET(predm: String, students: Array<Student>) =
         attrs.students = students
     }
 ```
-**lesson убран по вашему заданию**
+**Массив из занятий (lesson) убран по вашему заданию**
 ```
 package data
 data class Lesson(
