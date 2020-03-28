@@ -8,7 +8,7 @@ Plyashkevich Anton 28z
 <br>-StudentList преобразуйте в функциональный компонент;
 
 
-**Задание: Поднимите состояние компонента RStudentList в созданный компонент.**
+**Задание: Поднимите состояние компонента RStudentList в созданный компонент. Поднято состояние RpredmetState компонента RstudentList**
 ```
 interface RClassProps : RProps {
     var predm: String
@@ -53,7 +53,7 @@ val RFStudentList =
     }
 
 ```
-**Задание: Переделать приложение, реализовав компонент «Занятие»**
+**Задание: Переделать приложение, реализовав компонент «Занятие». Компонент занятие реализован в функции Rlesson представленной ниже.**
 ```
 interface RClassProps : RProps {
     var predm: String
