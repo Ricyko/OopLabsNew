@@ -9,13 +9,12 @@ LAB6
 **Перенсим массив lessons из AppProps в AppState**
 ```
 interface AppProps : RProps {
-    var students: Array<Student>
-}
-
+    var students: Array<Student> }
 interface AppState : RState {
-    var presents: Array<Array<Boolean>>
-    var lessons: Array<Lesson>                      // changed
-}
+    var presents: Array<Array<Boolean>>             //changed
+    var lessons: Array<Lesson>
+     }
+
 ```
 **Добавьте компонент AddLesson, который позволяет добавить урок в массив lessons**
 **<br>Компонент AddLesson**
@@ -35,69 +34,38 @@ import react.*
 import react.dom.*
 import kotlin.browser.document
 
-interface Props : RProps {
-   /* abstract val onClick: */
-    var lessons: Array<Lesson>
-    var new: (String) -> (Event) -> Unit
+interface Props :RProps{
+    var clicks : (String) ->  Unit
 }
-
-interface State : RState {
+/*interface State : RState {
     var newLesson: String
-}
-
-class newaddLesson : RComponent<Props, State>() {
-    override fun componentWillMount() {
-        state.newLesson = ""
-    }
-
-    override fun RBuilder.render() {
-        h2 {
-            +"Add new lesson"
+}*/
+ fun RBuilder.LessonAdd(click :(String) -> Unit ) =
+    child(functionalComponent<Props> {props ->
+        div{
+            h1{""}
         }
-
-        div {
-            input(type = InputType.text) {
-                attrs {
-                    value = state.newLesson
-                    onChangeFunction = {
-                        val target = it.target as HTMLInputElement              //TODO
-                        setState {
-                            newLesson = target.value
-                        }
-
-                    }
-                }
+        input(InputType.text) {
+            attrs {
+                id = "newlesson"
             }
-            button {
-                +"plus"
-                attrs.onClickFunction = props.new(state.newLesson)
-            }
-
         }
+        button {                                                                              //TODO
+            +"plus"
+            attrs.onClickFunction = {
+                val nameLesson = document.getElementById("newlesson") as HTMLInputElement
+                props.clicks(nameLesson.value)
+                //console.log(value)
+                /*attrs { button } }*/
+            }
+        }
+    }){
+        attrs.clicks=click
+       /* attrs.lessons = lessons*/
     }
-}
-
-fun RBuilder.addlesson(
-    lessons: Array<Lesson>,
-    new: (String) -> (Event) -> Unit
-) = child(newaddLesson::class) {
-    attrs.lessons = lessons
-    attrs.new = new
-}
 ```
-** Функция "changes" добавляет новое занятие вызывает другую функцию, обновляя массив "lessons"**
-```
- fun changes() = { newLesson: String ->
-        { _: Event ->
-            setState {
-                lessons += Lesson(newLesson)
-                presents += arrayOf(
-                    Array(props.students.size) { false })
 
-            }
-        }
-    }
- ```
+
  **После запуска**
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/698845633792049162/unknown.png>
 
