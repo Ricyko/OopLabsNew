@@ -3,8 +3,8 @@ Plyashkevich Anton 28-z
 LAB6
 
 **Задания**
-<br> Перенесите массив lessons из AppProps в AppState
-<br> Добавьте компонент AddLesson, который позволяет добавить урок в массив lessons
+<br> -Перенесите массив lessons из AppProps в AppState
+<br> -Добавьте компонент AddLesson, который позволяет добавить урок в массив lessons
 
 **Перенсим массив lessons из AppProps в AppState**
 ```
@@ -85,3 +85,16 @@ fun RBuilder.addlesson(
     attrs.new = new
 }
 ```
+** Функция "changes" добавляет новое занятие вызывает другую функцию, обновляя массив "lessons"**
+```
+ fun changes() = { newLesson: String ->
+        { _: Event ->
+            setState {
+                lessons += Lesson(newLesson)
+                presents += arrayOf(
+                    Array(props.students.size) { false })
+
+            }
+        }
+    }
+ ```
