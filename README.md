@@ -98,3 +98,5 @@ fun RBuilder.addlesson(
         }
     }
  ```
+ ** После запуска **
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/698845633792049162/unknown.png>
