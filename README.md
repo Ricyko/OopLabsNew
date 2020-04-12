@@ -18,7 +18,7 @@ interface AppState : RState {
 }
 ```
 **Добавьте компонент AddLesson, который позволяет добавить урок в массив lessons**
-**Компонент AddLesson**
+**<br>Компонент AddLesson**
 ```
 package component
 
