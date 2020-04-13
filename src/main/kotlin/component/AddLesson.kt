@@ -25,11 +25,8 @@ interface Props :RProps{
             attrs.onClickFunction = {
                 val nameLesson = document.getElementById("newlesson") as HTMLInputElement
                 props.clicks(nameLesson.value)
-                //console.log(value)
-              
             }
         }
     }){
         attrs.clicks=click
-    
     }
