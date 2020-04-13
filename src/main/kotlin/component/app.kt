@@ -20,7 +20,6 @@ class App : RComponent<AppProps, AppState>() {
             Array(props.students.size) { false }
         }
     }
-
     override fun RBuilder.render() {
         h1 { +"Lesson list" }
         h2{+"you can add lesson"}
