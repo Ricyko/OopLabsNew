@@ -8,13 +8,10 @@ import react.dom.h1
 import react.dom.h2
 
 interface AppProps : RProps {
-    var students: Array<Student>
-}
-
+    var students: Array<Student>}
 interface AppState : RState {
     var presents: Array<Array<Boolean>>
-    var lessons: Array<Lesson>                     
-}
+    var lessons: Array<Lesson> }
 
 class App : RComponent<AppProps, AppState>() {
     override fun componentWillMount() {
@@ -39,16 +36,13 @@ class App : RComponent<AppProps, AppState>() {
             props.students,
             transform(state.presents),
             onClickStudentFull
-        )
-    }
-
+        ) }
     fun changes() = { newLesson: String ->
         { _: Event ->
             setState {
                 lessons += Lesson(newLesson)
                 presents += arrayOf(
                     Array(props.students.size) { false })
-
             }
         }
     }
@@ -59,36 +53,29 @@ class App : RComponent<AppProps, AppState>() {
                 source[col][row]
             }
         }
-
     fun onClick(indexLesson: Int, indexStudent: Int) =
         { _: Event ->
             setState {
                 console.log(state.lessons)
                 presents[indexLesson][indexStudent] =
                     !presents[indexLesson][indexStudent]
-
             }
         }
-
     val onClickLessonFull =
         { indexLesson: Int ->
             { indexStudent: Int ->
                 onClick(indexLesson, indexStudent)
             }
         }
-
     val onClickStudentFull =
         { indexStudent: Int ->
             { indexLesson: Int ->
                 onClick(indexLesson, indexStudent)
             }
-        }
-
+      }
 }
 
 fun RBuilder.app(
     students: Array<Student>
 ) = child(App::class) {
-
-    attrs.students = students
-}
+    attrs.students = students}
