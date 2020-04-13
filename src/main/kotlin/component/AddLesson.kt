@@ -10,9 +10,6 @@ import kotlin.browser.document
 interface Props :RProps{
     var clicks : (String) ->  Unit
 }
-/*interface State : RState {
-    var newLesson: String
-}*/
  fun RBuilder.LessonAdd(click :(String) -> Unit ) =
     child(functionalComponent<Props> {props ->
         div{
@@ -22,17 +19,17 @@ interface Props :RProps{
             attrs {
                 id = "newlesson"
             }
-        }                                                                          //TODO
+        }                                                                          
         button {
             +"plus"
             attrs.onClickFunction = {
                 val nameLesson = document.getElementById("newlesson") as HTMLInputElement
                 props.clicks(nameLesson.value)
                 //console.log(value)
-                /*attrs { button } }*/
+              
             }
         }
     }){
         attrs.clicks=click
-       /* attrs.lessons = lessons*/
+    
     }
