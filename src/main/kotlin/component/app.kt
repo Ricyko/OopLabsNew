@@ -13,12 +13,12 @@ interface AppProps : RProps {
 
 interface AppState : RState {
     var presents: Array<Array<Boolean>>
-    var lessons: Array<Lesson>                      // changed
+    var lessons: Array<Lesson>                     
 }
 
 class App : RComponent<AppProps, AppState>() {
     override fun componentWillMount() {
-        state.lessons = lessonsList                         //changed
+        state.lessons = lessonsList                         
         state.presents = Array(state.lessons.size) {
             Array(props.students.size) { false }
         }
@@ -27,7 +27,7 @@ class App : RComponent<AppProps, AppState>() {
     override fun RBuilder.render() {
         h1 { +"Lesson list" }
         h2{+"you can add lesson"}
-        addlesson(lessonsList, changes())           //changed
+        addlesson(lessonsList, changes())          
         lessonListFull(
             state.lessons,
             props.students,
