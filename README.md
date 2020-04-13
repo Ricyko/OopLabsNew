@@ -76,4 +76,4 @@ interface Props :RProps{
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/698846631914635364/unknown.png>
 
 
-Мы доработали приложение из видео. Перенесите массив lessons из AppProps в AppState. Добавили компонент AddLesson, который позволяет добавить урок в массив lessons. Другие компоненты (кроме App и AddLesson) не изменились, работают корректн.
+Мы доработали приложение из видео. Перенесите массив lessons из AppProps в AppState. Добавили компонент AddLesson, который позволяет добавить урок в массив lessons. Другие компоненты (кроме App и AddLesson) не изменились, работают корректно.
