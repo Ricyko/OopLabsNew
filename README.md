@@ -11,7 +11,7 @@ LAB6
 interface AppProps : RProps {
     var students: Array<Student> }
 interface AppState : RState {
-    var presents: Array<Array<Boolean>>             //changed
+    var presents: Array<Array<Boolean>>            
     var lessons: Array<Lesson>
      }
 
@@ -37,9 +37,6 @@ import kotlin.browser.document
 interface Props :RProps{
     var clicks : (String) ->  Unit
 }
-/*interface State : RState {
-    var newLesson: String
-}*/
  fun RBuilder.LessonAdd(click :(String) -> Unit ) =
     child(functionalComponent<Props> {props ->
         div{
@@ -50,18 +47,16 @@ interface Props :RProps{
                 id = "newlesson"
             }
         }
-        button {                                                                              //TODO
+        button {                                                                         
             +"plus"
             attrs.onClickFunction = {
                 val nameLesson = document.getElementById("newlesson") as HTMLInputElement
                 props.clicks(nameLesson.value)
-                //console.log(value)
-                /*attrs { button } }*/
+         
             }
         }
     }){
         attrs.clicks=click
-       /* attrs.lessons = lessons*/
     }
 ```
 
