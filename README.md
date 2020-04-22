@@ -13,7 +13,8 @@ route("/addLesson",
         LessonAdd (newFunction())
  })
 ```
-**Добавили в header "/addlesson li {navLink("/addLesson") {+"add more Lesson"} } **
+**Добавили в header "/addlesson li {navLink("/addLesson") {+"add more Lesson"} }**
+
 ```  
 override fun RBuilder.render() {
         header {
