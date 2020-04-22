@@ -26,7 +26,7 @@ override fun RBuilder.render() {
                     li {navLink("/addLesson") {+"add more Lesson"} }     
                 } } }
 ```
-**Немного изменен main.kt **
+**Немного изменен main.kt**
 ```
 import component.app
 import data.*
