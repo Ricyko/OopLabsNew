@@ -41,3 +41,6 @@ fun main() {
         } }
 }
 ```
+**Запустили программу**
+
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/702554365344612472/unknown.png>
