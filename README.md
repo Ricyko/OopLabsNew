@@ -52,3 +52,7 @@ fun main() {
 **Урок добавлен**
 
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/702555880662499348/unknown.png>
+
+**Нажимаем на 2 студентов в новом добавленном уроке**
+
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/702556345668468812/unknown.png>
