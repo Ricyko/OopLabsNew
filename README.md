@@ -48,3 +48,7 @@ fun main() {
 **Добавляем "Predmet"**
 
 <img src=https://cdn.discordapp.com/attachments/407510344509030400/702555133665345536/unknown.png>
+
+**Урок добавлен**
+
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/702555880662499348/unknown.png>
