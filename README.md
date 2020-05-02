@@ -53,7 +53,45 @@ fun RBuilder.StudentAdd () =
     }
  ```
 <br>**В app были созданы функции,такие как "deleteforstudent","addforstudent","deleteforlesson","addforlesson" для изменения состояния с учетом редактирования списков студента или урока.**
-
+```
+fun addforelesson():(Event) -> Unit = {
+        val objectnew = document.getElementById("Lessons") as HTMLInputElement
+        setState {
+            less += Lesson(objectnew.value)
+            presents += arrayOf(Array(state.students.size){false})
+        } }
+    fun deleteforlesson() :(Event) -> Unit = {
+        val objectnew = document.getElementById("DeleteLessons") as HTMLInputElement
+        val redactLesson = state.less.toMutableList().apply {
+            removeAt(objectnew.value.toInt()-1) }
+            .toTypedArray()
+        val redactPresent = state.presents.toMutableList().apply {
+            removeAt(objectnew.value.toInt()-1) }
+            .toTypedArray()
+        setState{
+            less = redactLesson
+            presents=redactPresent
+        } }
+    fun addforstudent():(Event) -> Unit = {
+        val objectnew = document.getElementById("Students") as HTMLInputElement
+        val newvalue = objectnew.value.split(" ")
+        setState {
+            students += Student(newvalue[0],newvalue[1])
+            presents += arrayOf(Array(state.students.size){false})
+        } }
+    fun deleteforstudent() :(Event) -> Unit = {
+        val objectnew = document.getElementById("DeleteStudents") as HTMLInputElement
+        val redactStudent = state.students.toMutableList().apply {
+            removeAt(objectnew.value.toInt()-1) }
+            .toTypedArray()
+        val redactPresent = state.presents.toMutableList().apply {
+            removeAt(objectnew.value.toInt()-1) }
+            .toTypedArray()
+        setState{
+            students = redactStudent
+            presents= redactPresent
+        } }
+```
 <br>**Программа после запуска.**
 <br><img src=https://cdn.discordapp.com/attachments/407510344509030400/706215821994885142/unknown.png>
 <br>**Нажатие на изменение урока/студента.**
