@@ -6,8 +6,54 @@ LAB8
 <br>Доработайте приложение из видеоуроков. Разработайте компоненты, отвечающий за редактирование названия занятия и имени и фамилии студента. Разработайте компонент, отвечающий за редактирование списка элементов (с возможностью добавить или удалить элемент). В качестве аргументов этому компоненту передаются компоненты для отображения и для редактирования элемента списка. Добавьте в приложение страницы для редактирования списка студентов и списка занятий. 
 <br>**Добавлены компоненты для изменения занятия и студента(файлы ComponentForLesson,ComponentForStudent.**
 <br>**СomponentForLesson.**
+```
+package component
+import kotlinx.html.InputType
+import kotlinx.html.id
+import react.*
+import react.dom.*
+interface Props1 :RProps{
+}
+fun RBuilder.LessonAdd( ) =
+    child(functionalComponent<Props1> {
+        input(InputType.text) {
+            attrs {
+                placeholder = "Write lesson name"
+                id = "Lessons" } }
+        input(InputType.text){
+            attrs{
+                placeholder = "Delete lesson name)"
+                id = "DeleteLessons"
+            } } }){
+    }
+```   
 <br>**ComponentForStudent.**
+```
+package component
+import kotlinx.html.InputType
+import kotlinx.html.id
+import react.RBuilder
+import react.RProps
+import react.child
+import react.dom.input
+import react.functionalComponent
+interface Props2 : RProps {
+}
+fun RBuilder.StudentAdd () =
+    child(functionalComponent<Props2> {
+        input(InputType.text) {
+            attrs {
+                placeholder = "Write student name"
+                id = "Students" } }
+        input(InputType.text) {
+            attrs {
+                placeholder = "Delete student name"
+                id = "DeleteStudents" } }
+    }){
+    }
+ ```
 <br>**В app были созданы функции,такие как "deleteforstudent","addforstudent","deleteforlesson","addforlesson" для изменения состояния с учетом редактирования списков студента или урока.**
+
 <br>**Программа после запуска.**
 <br><img src=https://cdn.discordapp.com/attachments/407510344509030400/706215821994885142/unknown.png>
 <br>**Нажатие на изменение урока/студента.**
