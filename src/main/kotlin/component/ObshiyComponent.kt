@@ -26,7 +26,7 @@ fun <O> Redact(
                 +"DEL"
                 attrs.onClickFunction = props.deletenew }
             Component(props.subject,props.name,props.way) } }
-fun <O> RBuilder.anyEdit(
+fun <O> RBuilder.Redact(
     Component: RBuilder.(Array<O>, String, String)->ReactElement,
     addobject :RBuilder.() -> ReactElement,
     subject : Array<O>,
