@@ -14,7 +14,8 @@ fun <O> Redact(
     rAddObj :RBuilder.() -> ReactElement,
     Component: RBuilder.(Array<O>, String, String)->ReactElement
 ) = functionalComponent<Props3<O>> {props ->
-        h2{+"Edit Page"}
+        h1{+"you can add or delete students/lessons"}
+        h2{+"write something"}
         p {
             +"redact ${props.name}"
             rAddObj()
@@ -39,4 +40,4 @@ fun <O> RBuilder.Redact(
     attrs.deletenew=deletenew
     attrs.subject= subject
     attrs.name = name
-    attrs.way = way}
+    attrs.way = way
