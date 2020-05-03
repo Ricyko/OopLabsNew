@@ -68,14 +68,14 @@ class App : RComponent<AppProps, AppState>() {
                 })
             route("/editStudents",
                 render = {
-                   Redact(
+                    Redact(
                         RBuilder::anyList, RBuilder::StudentAdd, state.students, addforstudent(), deleteforstudent(),
                         "Students",
                         "/students"
                     ) })
             route("/editLessons",
                 render = {
-                   Redact(
+                    Redact(
                         RBuilder::anyList, RBuilder::LessonAdd, state.less, addforelesson(), deleteforlesson(),
                         "Lessons",
                         "/lessons")
