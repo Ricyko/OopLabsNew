@@ -13,10 +13,9 @@ fun RBuilder.StudentAdd () =
         input(InputType.text) {
             attrs {
                 placeholder = "Write student name"
-                id = "Students" } }
-        input(InputType.text) {
-            attrs {
-                placeholder = "Delete student name"
-                id = "DeleteStudents" } }
+                id = "Students"
+            }
+        }
     }){
+
     }
