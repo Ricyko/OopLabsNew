@@ -10,10 +10,8 @@ fun RBuilder.LessonAdd( ) =
         input(InputType.text) {
             attrs {
                 placeholder = "Write lesson name"
-                id = "Lessons" } }
-        input(InputType.text){
-            attrs{
-                placeholder = "Delete lesson name)"
-                id = "DeleteLessons"
-            } } }){
+                id = "Lessons"
+            }
+            }
+    }){
     }
