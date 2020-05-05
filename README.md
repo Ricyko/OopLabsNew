@@ -104,5 +104,32 @@ fun addforelesson():(Event) -> Unit = {
 <br><img src=https://cdn.discordapp.com/attachments/407510344509030400/706217353536471110/unknown.png>
 <br>**Удаляем 2 первых пары.**
 <br><img src=https://cdn.discordapp.com/attachments/407510344509030400/706219236821041162/unknown.png>
+<br>**Переделайте программу так, чтобы удалить можно было без ввода имени студента, а просто нажав на кнопку.**
+<br>**Измене файл ComponentForLesson, аналогично ему изменен ComponentForStudent**
+```
+package component
+import kotlinx.html.InputType
+import kotlinx.html.id
+import react.*
+import react.dom.*
+interface Props1 :RProps{
+}
+fun RBuilder.LessonAdd( ) =
+    child(functionalComponent<Props1> {
+        input(InputType.text) {
+            attrs {
+                placeholder = "Write lesson name"
+                id = "Lessons"
+            }
+            }
+    }){
+    }
+```
+<br>**Исправлению подверглись функции для удаления урока и удаления студента в ObshiyComponent,немного изменен AnyList**
+<br>**Программа после открытия**
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/707165682650972250/unknown.png>
+<br>**Программа после удаления студента**
+<img src=https://cdn.discordapp.com/attachments/407510344509030400/707165849282281532/unknown.png>
+
 <br> Вывод: Мы доработали приложение из видеоуроков. Разрабтали компоненты, отвечающие за редактирование названия занятия и имени и фамилии студента. Разработали компонент, отвечающий за редактирование списка элементов. Добавили в приложение страницы для редактирования списка студуентов и списка занятий.
     
