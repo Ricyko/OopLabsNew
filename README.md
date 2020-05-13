@@ -16,8 +16,7 @@ class deleteforlesson (val number: Int) :RAction
 ```
 
 <br>**Reducer изменен,добавлены некоторые изменения,такие как:**
-
-<br>**Задание**
+```
 package redux
 
 
@@ -77,3 +76,6 @@ fun changeReducer(state: State, action: RAction) =
             }.toTypedArray(),
             state.students)
         else -> state }
+```
+<br>**App подкорректирован для работы**
+<br>**Суть работы программы не изменилась с 8 lab, предыдущий модуль был переделан с использованием redux**
