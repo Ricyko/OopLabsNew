@@ -10,8 +10,9 @@ LAB9
 ``` 
 class ChangePresent(val lesson: Int, val student: Int) : RAction
 class addforstudent (val studname: String, val studsurname: String) :RAction
-class addforlesson (val less: String) :RAction
 class deleteforstudent (val number: Int) :RAction
+class addforlesson (val less: String) :RAction
+
 class deleteforlesson (val number: Int) :RAction
 ```
 
