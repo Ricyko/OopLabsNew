@@ -19,8 +19,6 @@ class deleteforlesson (val number: Int) :RAction
 <br>**Reducer изменен,добавлены некоторые изменения,такие как:**
 ```
 package redux
-
-
 import data.Student
 import data.*
 import data.Lesson
