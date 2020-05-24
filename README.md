@@ -71,27 +71,6 @@ class spanlink(props: LinkProps) : RComponent<LinkProps, RState>(props) {
     }
 }
 ```
-
-<br>**Запуск приложения**
-
-<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713695270575145030/unknown.png>
-
-<br>**В Lesson отмечаем одного студента**
-
-<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713699728700866587/unknown.png>
-
-<br>**Нажимаем prisutstvie**
-
-<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713699827564675112/unknown.png>
-
-<br>**Нажимаем otsutstvie**
-
-<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713700030548017162/unknown.png>
-
-<br>**Нажимаем в student OOP and Philosophy**
-
-<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713700280084201593/unknown.png>
-
 <br>**Для anyfullcontainer добавили видимость студентов и предметов**
 ```
 private fun studentPrisOts(
@@ -150,6 +129,26 @@ private fun lessonPrisOts(
     return lessons
 }
 ```
+
+<br>**Запуск приложения**
+
+<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713695270575145030/unknown.png>
+
+<br>**В Lesson отмечаем одного студента**
+
+<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713699728700866587/unknown.png>
+
+<br>**Нажимаем prisutstvie**
+
+<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713699827564675112/unknown.png>
+
+<br>**Нажимаем otsutstvie**
+
+<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713700030548017162/unknown.png>
+
+<br>**Нажимаем в student OOP and Philosophy**
+
+<br><img src=https://cdn.discordapp.com/attachments/407510344509030400/713700280084201593/unknown.png>
 
 <br>**Нажимаем otstutstvie**
 
